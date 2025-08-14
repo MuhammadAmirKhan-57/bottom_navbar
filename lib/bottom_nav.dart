@@ -1,3 +1,4 @@
+import 'package:bottom_navbar/about_screen.dart';
 import 'package:bottom_navbar/home_screen.dart';
 import 'package:bottom_navbar/profile_screen.dart';
 import 'package:flutter/material.dart';
@@ -15,8 +16,9 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
   List<Widget> screenList = [
     HomeScreen(),
     ProfileScreen(),
-    // AboutScreen(),
+    AboutScreen(),
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +27,19 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
         title: Text('Bottom Navbar'),
         backgroundColor: Colors.indigo.shade200,
       ),
-      
+      body: screenList.elementAt(selectedIndex),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: selectedIndex,
+        onTap: (index) {
+          selectedIndex = index;
+          setState(() {});
+        },
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home)),
+          BottomNavigationBarItem(icon: Icon(Icons.edit_document)),
+          BottomNavigationBarItem(icon: Icon(Icons.account_circle))
+        ]
+        ),
     );
   }
 }
