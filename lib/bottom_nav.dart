@@ -1,4 +1,5 @@
 import 'package:bottom_navbar/home_screen.dart';
+import 'package:bottom_navbar/profile_screen.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavScreen extends StatefulWidget {
@@ -13,7 +14,7 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
 
   List<Widget> screenList = [
     HomeScreen(),
-    // ProfileScreen(),
+    ProfileScreen(),
     // AboutScreen(),
   ];
   @override
